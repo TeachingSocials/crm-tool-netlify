@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Orbitron:wght@400;500;700&display=swap');
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 205 30% 8%;
+    --foreground: 210 20% 96%;
+
+    --card: 210 38% 14%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 210 38% 14%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 38 28% 67%;
+    --primary-foreground: 210 38% 12%;
+
+    --secondary: 210 38% 16%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 210 38% 16%;
+    --muted-foreground: 210 15% 55%;
+
+    --accent: 38 28% 67%;
+    --accent-foreground: 210 38% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 28% 55%;
+    --input: 210 38% 12%;
+    --ring: 38 28% 67%;
+
+    --radius: 0rem;
+
+    /* Custom tokens */
+    --bg-dark: 205 30% 8%;
+    --bg-panel: 210 41% 16%;
+    --beige: 38 28% 67%;
+    --hellblau: 210 25% 83%;
+    --weiss: 0 0% 96%;
+    --text-dim: 210 25% 83%;
+
+    --glow: rgba(192, 173, 148, 0.5);
+    --glow-strong: rgba(192, 173, 148, 0.8);
+    --border-color: rgba(192, 173, 148, 0.25);
+
+    --sidebar-background: 210 38% 10%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 38 28% 67%;
+    --sidebar-primary-foreground: 210 38% 12%;
+    --sidebar-accent: 210 38% 16%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 210 38% 16%;
+    --sidebar-ring: 38 28% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--beige)); border-radius: 2px; }
+
+/* Animations */
+@keyframes gridMove {
+  0% { transform: rotateX(60deg) translateY(-50%) translateZ(0); }
+  100% { transform: rotateX(60deg) translateY(-50%) translateZ(60px); }
+}
+
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+}
+
+@keyframes nodePulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+
+@keyframes scanlineFlicker {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.35; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes holoRing {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotateX(80deg); }
+  50% { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5) rotateX(80deg); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); filter: drop-shadow(0 0 30px var(--glow)); }
+  20% { transform: translate(-3px, 2px); filter: drop-shadow(3px 0 0 hsl(210 25% 83%)) drop-shadow(-3px 0 0 hsl(38 28% 67%)); }
+  40% { transform: translate(3px, -2px); filter: drop-shadow(-3px 0 0 hsl(210 25% 83%)) drop-shadow(3px 0 0 hsl(38 28% 67%)); }
+  60% { transform: translate(-2px, -1px); clip-path: inset(20% 0 30% 0); }
+  80% { transform: translate(2px, 1px); clip-path: inset(50% 0 20% 0); }
+  100% { transform: translate(0); filter: drop-shadow(0 0 30px var(--glow)); clip-path: none; }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotateY(0deg); filter: drop-shadow(0 0 30px var(--glow)); }
+  50% { transform: translateY(-10px) rotateY(5deg); filter: drop-shadow(0 0 50px var(--glow-strong)); }
+}
+
+@keyframes hexFill {
+  0% { left: -100%; }
+  100% { left: 0%; }
+}
+
+@keyframes logIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--glow); }
+  50% { box-shadow: 0 0 40px var(--glow-strong), 0 0 60px var(--glow); }
+}
+
+@keyframes cardShine {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
+}
+
+@keyframes headerSlide {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
