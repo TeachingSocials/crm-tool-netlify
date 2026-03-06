@@ -1,13 +1,13 @@
 const WEBHOOK_URLS = [
-  "https://hook.eu1.make.com/qhdd5jvh7q425jjuuu2inpqfla1svvh8",
-  "https://hook.eu1.make.com/ked0wpmencap6afbn97ofv4ouzgqlrjz",
-  "https://hook.eu1.make.com/hr4neagwrtzpgqo990pwh95a3cyi18fd",
-  "https://hook.eu1.make.com/c8g8vmm8eaac20b9x392c4rpramdg03z",
-  "https://hook.eu1.make.com/rda1wy0c4e1nujnv5i1xccqi6sfqxxfh",
-  "https://hook.eu1.make.com/5g4zu1tdgwshfo5ruefo2dd1aegnk8rn",
-  "https://hook.eu1.make.com/t76xqvhbq6s8qgny6pce2hxnopw44agr",
-  "https://hook.eu1.make.com/8dg67w11xb5azf1argcoiinictimlj8o",
-  "https://hook.eu1.make.com/37g47c1yz5l89jh1bhbv84frfl4xt52o",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/8a08171d-2ed5-4bbe-a6f0-3340d7d9f6df",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/4adf7a65-805e-4080-a47c-686a79b7a4eb",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/c82dc7e3-34c0-43b9-9133-a0664d37e5dd",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/e186c33b-1a27-42de-9212-f239ee88a090",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/2dced375-7318-42ac-8b41-619fdbc16a83",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/63e92cee-7a4f-4f95-a7a9-88fc28693456",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/0f2b3603-7cb4-430a-af80-d8eef06b0136",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/8b2b23f5-7219-4d7c-bbac-c2abf57c7c27",
+  "https://n8n.srv1384444.hstgr.cloud/webhook/d6e4147d-2e6a-4ad1-a600-cb69640930e8",
 ];
 
 exports.handler = async (event) => {
